@@ -21,5 +21,11 @@ public class Main {
                 .count();
         System.out.println(count);
 
+        List<String> listOfconscript = persons.stream()
+                .filter(x -> x.getAge() > 18)
+                .filter(x -> x.getAge() < 27)
+                .map(b -> b.getFamily())
+                .collect(Collectors.toList());
+        for (String i : listOfconscript) System.out.println(i);
     }
 }
